@@ -2,11 +2,19 @@ package conta;
 
 import java.util.Scanner;
 
+import conta.model.Conta;
 import conta.util.Colors;
 
 public class Menu {
 
 	public static void main(String[] args) {
+		
+		Conta c1 = new Conta(123456, 123, 1, "José da Silva", 10000.0f); 
+		c1.view();
+		c1.withdraw(12000.0f);
+		c1.view();
+		c1.deposit(5000.0f);
+		c1.view();
 		
 		Scanner scanner = new Scanner(System.in);
 		
