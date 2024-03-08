@@ -1,6 +1,6 @@
 package conta.model;
 
-public class Conta {
+public abstract class Conta {
 	
 	//Attributes / Private é um tipo de encapsulamento
 	private int number;
