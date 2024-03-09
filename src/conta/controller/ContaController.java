@@ -1,9 +1,14 @@
 package conta.controller;
 
+import java.util.ArrayList;
+
 import conta.model.Conta;
 import conta.repository.ContaRepository;
 
 public class ContaController implements ContaRepository {
+	
+	private ArrayList<Conta> listaContas = new ArrayList<Conta>();
+	int number = 0;
 
 	@Override
 	public void procurarPorNumero(int number) {
@@ -13,13 +18,16 @@ public class ContaController implements ContaRepository {
 
 	@Override
 	public void listarTodas() {
-		// TODO Auto-generated method stub
+		for (var conta: listaContas) {
+			conta.view();
+		}
 		
 	}
 
 	@Override
 	public void cadastrar(Conta conta) {
-		// TODO Auto-generated method stub
+		listaContas.add(conta);
+		System.out.println("\nA Conta número: " + conta.getNumber() + "foi criada com sucesso!");
 		
 	}
 
@@ -52,5 +60,9 @@ public class ContaController implements ContaRepository {
 		// TODO Auto-generated method stub
 		
 	} 
+	
+	public int gerarNumero() {
+		return ++ number;
+	}
 	
 }
